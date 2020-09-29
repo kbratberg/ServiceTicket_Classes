@@ -1,4 +1,6 @@
 ﻿using System;
+using NLog.Web;
+using System.IO;
 
 namespace ServiceTickets_Classes
 {
@@ -6,7 +8,7 @@ namespace ServiceTickets_Classes
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+           
         }
     }
 }
