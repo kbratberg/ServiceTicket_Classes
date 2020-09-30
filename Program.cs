@@ -1,16 +1,6 @@
 ﻿using System;
 using NLog.Web;
 using System.IO;
-
-namespace ServiceTickets_Classes
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-           using System;
-using NLog.Web;
-using System.IO;
 using System.Collections.Generic;
 
 namespace MovieLibrary
@@ -21,8 +11,8 @@ namespace MovieLibrary
         private static NLog.Logger logger = NLogBuilder.ConfigureNLog(Directory.GetCurrentDirectory() + "\\nlog.config").GetCurrentClassLogger();
         static void Main(string[] args)
         {
-             string movieFilePath = Directory.GetCurrentDirectory() + "\\movies.csv";
-         string movieFilePath = Directory.GetCurrentDirectory() + "\\movies.csv";
+             string ticketFilePath = Directory.GetCurrentDirectory() + "\\ServiceTickets.csv";
+            
             logger.Info("Program started");
 
             // Movie movie = new Movie
@@ -37,8 +27,8 @@ namespace MovieLibrary
             do
             {
                 // display choices to user
-                Console.WriteLine("1) Add Movie");
-                Console.WriteLine("2) Display All Movies");
+                Console.WriteLine("1) Add Service TIcket");
+                Console.WriteLine("2) Display All Service Tickets");
                 Console.WriteLine("Enter to quit");
                 // input selection
                 choice = Console.ReadLine();
@@ -47,43 +37,50 @@ namespace MovieLibrary
                 
                 if (choice == "1")
                 {
-                    // Add movie
-                       Movie movie = new Movie();
-                    // ask user to input movie title
-                    Console.WriteLine("Enter movie title");
-                    // input title
-                    movie.title = Console.ReadLine();
-                    // verify title is unique
-                    if (movieFile.isUniqueTitle(movie.title)){
-                          // input genres
+                    
+                       ServiceTicket serviceTicket = new ServiceTicket();
+                    
+                    Console.WriteLine("Enter ticket summary");
+                    
+                    serviceTicket.summary = Console.ReadLine();
+                    
+                   Console.WriteLine("Enter ticket status");
+                   serviceTicket.status = Console.ReadLine();
+                   Console.WriteLine("Enter ticket priority");
+                   serviceTicket.priority = Console.ReadLine();
+                   Console.WriteLine("Enter your name");
+                   serviceTicket.yourName = Console.ReadLine();
+                     Console.WriteLine("Enter assigned employee name");
+                    serviceTicket.assigned = Console.ReadLine();
+                   
+                          // input watching
                         string input;
                         do
                         {
-                            // ask user to enter genre
-                            Console.WriteLine("Enter genre (or done to quit)");
-                            // input genre
+                            
+                             Console.WriteLine("Enter employees watching. Ender 1 to quit");
+                            
                             input = Console.ReadLine();
-                            // if user enters "done"
-                            // or does not enter a genre do not add it to list
-                            if (input != "done" && input.Length > 0)
+                           
+                            if (input != "1" && input.Length > 0)
                             {
-                                movie.genres.Add(input);
+                                serviceTicket.employeeWatching.Add(input);
                             }
-                        } while (input != "done");
-                        // specify if no genres are entered
-                        if (movie.genres.Count == 0)
+                        } while (input != "1");
+                        
+                        if (serviceTicket.employeeWatching.Count == 0)
                         {
-                            movie.genres.Add("(no genres listed)");
+                            serviceTicket.employeeWatching.Add("(no genres listed)");
                         }
-                         // add movie
-                        movieFile.AddMovie(movie);
-                    }
+                         
+                        ticketFile.AddTicket(serviceTicket);
+                    
                 } else if (choice == "2")
                 {
-                    // Display All Movies
-                    foreach(Movie m in movieFile.Movies)
+                   
+                    foreach(ServiceTicket s in ticketFile.ServiceTickets)
                     {
-                        Console.WriteLine(m.Display());
+                        Console.WriteLine(s.Display());
                     }
                 }
             } while (choice == "1" || choice == "2");

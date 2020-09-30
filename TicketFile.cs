@@ -69,19 +69,20 @@ namespace ServiceTickets_Classes
 
                 sr.Close();
                 logger.Info("Tickets in File: {Count}", Tickets.Count);
-            } catch(){
-
+            } catch(Exception ex)
+            {
+                logger.Error(ex.Message);
             }
 
-            public void AddTicket(ServiceTicket serviceTicket){
+        }
+        public void AddTicket(ServiceTicket serviceTicket){
                 serviceTicket.ticketId = Tickets.Max(s => s.ticketId) + 1;
 
                 StreamWriter sw = new StreamWriter(filePath, true);
                 sw.WriteLine($"{serviceTicket.ticketId},{serviceTicket.summary},{serviceTicket.status},{serviceTicket.assigned},{string.Join('|', serviceTicket.employeeWatching)}");
                 sw.Close();
-                Tickets.Add(serviceTicket)
+                Tickets.Add(serviceTicket);
             }
-        }
     
     }
 }

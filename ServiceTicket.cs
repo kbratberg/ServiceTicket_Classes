@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace ServiceTickets_Classes
 {
-    class ServiceTicket
+    public class ServiceTicket
     {
         public UInt64 ticketId { get; set; }
 
