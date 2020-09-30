@@ -32,7 +32,7 @@ namespace ServiceTickets_Classes
                     serviceTicket.priority = ticketDetails[3];
                     serviceTicket.yourName = ticketDetails[4];
                     serviceTicket.assigned = ticketDetails[5];
-                    serviceTicket.watching = ticketDetails[6].Split('|').ToList();
+                    serviceTicket.employeeWatching = ticketDetails[6].Split('|').ToList();
                 }
                 else{
                     serviceTicket.ticketId = UInt64.Parse(line.Substring(0, idx - 1));
@@ -62,7 +62,7 @@ namespace ServiceTickets_Classes
 
                         line = line.Substring(idx + 1);
                         idx = line.IndexOf(',');
-                        serviceTicket.watching = line.Split('|').ToList();
+                        serviceTicket.employeeWatching = line.Split('|').ToList();
                 }
                 Tickets.Add(serviceTicket);
                 }
@@ -79,7 +79,7 @@ namespace ServiceTickets_Classes
                 StreamWriter sw = new StreamWriter(filePath, true);
                 sw.WriteLine($"{serviceTicket.ticketId},{serviceTicket.summary},{serviceTicket.status},{serviceTicket.assigned},{string.Join('|', serviceTicket.employeeWatching)}");
                 sw.Close();
-                Tickets.Add(serviceTicket);
+                Tickets.Add(serviceTicket)
             }
         }
     
