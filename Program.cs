@@ -3,7 +3,7 @@ using NLog.Web;
 using System.IO;
 using System.Collections.Generic;
 
-namespace MovieLibrary
+namespace ServiceTickets_Classes
 {
     class Program
     {
@@ -78,7 +78,7 @@ namespace MovieLibrary
                 } else if (choice == "2")
                 {
                    
-                    foreach(ServiceTicket s in ticketFile.ServiceTickets)
+                    foreach(ServiceTicket s in ticketFile.Tickets)
                     {
                         Console.WriteLine(s.Display());
                     }
@@ -89,6 +89,4 @@ namespace MovieLibrary
         }
     }
 }
-        }
-    }
-}
+        
