@@ -1,0 +1,10 @@
+2020-09-30 16:02:11.8927|INFO|ServiceTickets_Classes.Program|Program started
+2020-09-30 16:02:11.9446|ERROR|ServiceTickets_Classes.TicketFile|Input string was not in a correct format.
+2020-09-30 16:02:22.6987|INFO|ServiceTickets_Classes.Program|User choice: "2"
+2020-10-02 14:03:10.5297|INFO|ServiceTickets_Classes.Program|Program started
+2020-10-02 14:03:10.6004|INFO|ServiceTickets_Classes.TicketFile|Tickets in File: 2
+2020-10-02 14:03:12.3453|INFO|ServiceTickets_Classes.Program|User choice: "2"
+2020-10-02 14:03:23.7749|INFO|ServiceTickets_Classes.Program|User choice: "1"
+2020-10-02 14:04:51.7035|INFO|ServiceTickets_Classes.Program|User choice: "2"
+2020-10-02 14:05:32.8044|INFO|ServiceTickets_Classes.Program|User choice: ""
+2020-10-02 14:05:32.8044|INFO|ServiceTickets_Classes.Program|Program ended

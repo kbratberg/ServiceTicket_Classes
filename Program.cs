@@ -15,19 +15,12 @@ namespace ServiceTickets_Classes
             
             logger.Info("Program started");
 
-            // Movie movie = new Movie
-            // {
-            //     movieId = 1,
-            //     title = "Jeff's Killer Movie (2019)",
-            //     genres = new List<string> { "Action", "Romance", "Comedy" }
-            // };
-            // Console.WriteLine(movie.Display());
             TicketFile ticketFile = new TicketFile(ticketFilePath);
             string choice = "";
             do
             {
                 // display choices to user
-                Console.WriteLine("1) Add Service TIcket");
+                Console.WriteLine("1) Add Service Ticket");
                 Console.WriteLine("2) Display All Service Tickets");
                 Console.WriteLine("Enter to quit");
                 // input selection
@@ -50,7 +43,7 @@ namespace ServiceTickets_Classes
                    serviceTicket.priority = Console.ReadLine();
                    Console.WriteLine("Enter your name");
                    serviceTicket.yourName = Console.ReadLine();
-                     Console.WriteLine("Enter assigned employee name");
+                    Console.WriteLine("Enter assigned employee name");
                     serviceTicket.assigned = Console.ReadLine();
                    
                           // input watching
@@ -58,7 +51,7 @@ namespace ServiceTickets_Classes
                         do
                         {
                             
-                             Console.WriteLine("Enter employees watching. Ender 1 to quit");
+                             Console.WriteLine("Enter employees watching. Enter 1 to quit");
                             
                             input = Console.ReadLine();
                            
@@ -70,7 +63,7 @@ namespace ServiceTickets_Classes
                         
                         if (serviceTicket.employeeWatching.Count == 0)
                         {
-                            serviceTicket.employeeWatching.Add("(no genres listed)");
+                            serviceTicket.employeeWatching.Add("(no employee listed)");
                         }
                          
                         ticketFile.AddTicket(serviceTicket);
