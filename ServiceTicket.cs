@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace ServiceTickets_Classes
 {
-    public class ServiceTicket
+    public abstract class ServiceTicket
     {
         public UInt64 ticketId { get; set; }
 
@@ -13,6 +13,7 @@ namespace ServiceTickets_Classes
         string _priority;
         string _yourName;
         string _assigned;
+
 
         public string summary
         {
@@ -55,10 +56,42 @@ namespace ServiceTickets_Classes
             employeeWatching = new List<string>();
         }
 
-        public string Display()
+        public virtual string Display()
         {
             return $"Ticket Id: {ticketId}\nSummary: {summary}\nStatus: {status}\nPriority Level: {priority}\nYour Name: {yourName}\nAssigned Employee {assigned}\nEmployees Watching {string.Join(", ", employeeWatching)} ";
         }
 
+    }
+
+    public class Bug : ServiceTicket {
+
+        public string severity {get; set;}
+
+        public override string Display()
+        {
+           return $"Ticket Id: {ticketId}\nSummary: {summary}\nStatus: {status}\nPriority Level: {priority}\nYour Name: {yourName}\nAssigned Employee: {assigned}\nEmployees Watching: {string.Join(", ", employeeWatching)}\nSeverity: {severity} "; 
+        }
+    }
+
+    public class Enhancements : ServiceTicket{
+        public string software {get; set;}
+        public string cost {get; set;}
+        public string reason {get; set;}
+        public string estimate {get; set;}
+
+       public override string Display()
+        {
+           return $"Ticket Id: {ticketId}\nSummary: {summary}\nStatus: {status}\nPriority Level: {priority}\nYour Name: {yourName}\nAssigned Employee: {assigned}\nEmployees Watching: {string.Join(", ", employeeWatching)}\nSoftware: {software}\nCost: {cost}\nReason: {reason}\nEstimate: {estimate}"; 
+        }
+    }
+
+    public class Tasks : ServiceTicket{
+        public string projectName {get; set;}
+        public string dueDate {get; set;}
+        
+       public override string Display()
+        {
+           return $"Ticket Id: {ticketId}\nSummary: {summary}\nStatus: {status}\nPriority Level: {priority}\nYour Name: {yourName}\nAssigned Employee: {assigned}\nEmployees Watching: {string.Join(", ", employeeWatching)}\nProject Name: {projectName}\nDue Date: {dueDate}"; 
+        }
     }
 }
