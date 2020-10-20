@@ -31,6 +31,7 @@ namespace ServiceTickets_Classes
 
             
                     string ticketFilePath;
+
                     if(choice == "1"){
                     ticketFilePath = Directory.GetCurrentDirectory() + "\\ServiceTickets.csv";
                     TicketFile ticketFile = new TicketFile(ticketFilePath);
@@ -68,7 +69,7 @@ namespace ServiceTickets_Classes
                         {
                             serviceTicket.employeeWatching.Add("(no employee listed)");
                         }
-                        Console.WriteLine("Eneter Severity");
+                        Console.WriteLine("Enter Severity");
                         serviceTicket.severity = Console.ReadLine();
                          
                         ticketFile.AddBugTicket(serviceTicket);

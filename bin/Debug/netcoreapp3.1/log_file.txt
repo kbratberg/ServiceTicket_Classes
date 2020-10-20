@@ -47,3 +47,85 @@
 2020-10-20 14:16:51.5783|INFO|ServiceTickets_Classes.TasksFile|Tasks in File: 0
 2020-10-20 14:16:54.7155|INFO|ServiceTickets_Classes.Program|User choice: "1"
 2020-10-20 14:16:54.7190|ERROR|ServiceTickets_Classes.TicketFile|Index was outside the bounds of the array.
+2020-10-20 14:24:31.4009|INFO|ServiceTickets_Classes.Program|Program started
+2020-10-20 14:24:40.1316|INFO|ServiceTickets_Classes.Program|User choice: "1"
+2020-10-20 14:24:40.1813|ERROR|ServiceTickets_Classes.TicketFile|Index was outside the bounds of the array.
+2020-10-20 14:27:36.3310|INFO|ServiceTickets_Classes.Program|Program started
+2020-10-20 14:27:54.7553|INFO|ServiceTickets_Classes.Program|User choice: "1"
+2020-10-20 14:27:54.8060|ERROR|ServiceTickets_Classes.TicketFile|Index was outside the bounds of the array.
+2020-10-20 14:30:03.9466|INFO|ServiceTickets_Classes.Program|Program started
+2020-10-20 14:30:04.7774|INFO|ServiceTickets_Classes.Program|User choice: "1"
+2020-10-20 14:30:04.8293|ERROR|ServiceTickets_Classes.TicketFile|Index was outside the bounds of the array.
+2020-10-20 16:25:08.3063|INFO|ServiceTickets_Classes.Program|Program started
+2020-10-20 16:25:13.4089|INFO|ServiceTickets_Classes.Program|User choice: "1"
+2020-10-20 16:25:13.4613|ERROR|ServiceTickets_Classes.TicketFile|Index was outside the bounds of the array.
+2020-10-20 16:26:15.9055|INFO|ServiceTickets_Classes.Program|Program started
+2020-10-20 16:26:32.9895|INFO|ServiceTickets_Classes.Program|Program started
+2020-10-20 16:26:34.3990|INFO|ServiceTickets_Classes.Program|User choice: "1"
+2020-10-20 16:26:34.4450|ERROR|ServiceTickets_Classes.TicketFile|Index was outside the bounds of the array.
+2020-10-20 16:27:29.8622|INFO|ServiceTickets_Classes.Program|Program started
+2020-10-20 16:27:30.6826|INFO|ServiceTickets_Classes.Program|User choice: "1"
+2020-10-20 16:27:30.7322|ERROR|ServiceTickets_Classes.TicketFile|Index was outside the bounds of the array.
+2020-10-20 16:29:03.7331|INFO|ServiceTickets_Classes.Program|Program started
+2020-10-20 16:29:07.7001|INFO|ServiceTickets_Classes.Program|User choice: "1"
+2020-10-20 16:29:07.7762|ERROR|ServiceTickets_Classes.TicketFile|Index was outside the bounds of the array.
+2020-10-20 16:31:37.0020|INFO|ServiceTickets_Classes.Program|Program started
+2020-10-20 16:31:41.1524|INFO|ServiceTickets_Classes.Program|User choice: "1"
+2020-10-20 16:31:41.2160|ERROR|ServiceTickets_Classes.TicketFile|Index was outside the bounds of the array.
+2020-10-20 16:33:44.4351|INFO|ServiceTickets_Classes.Program|Program started
+2020-10-20 16:33:45.3704|INFO|ServiceTickets_Classes.Program|User choice: "1"
+2020-10-20 16:33:45.4346|INFO|ServiceTickets_Classes.TicketFile|System.Collections.Generic.List`1[ServiceTickets_Classes.Bug]
+2020-10-20 16:33:45.4384|INFO|ServiceTickets_Classes.TicketFile|Bugs in File 3
+2020-10-20 16:34:55.2325|INFO|ServiceTickets_Classes.Program|User choice: "4"
+2020-10-20 16:34:55.2512|ERROR|ServiceTickets_Classes.TicketFile|Index was outside the bounds of the array.
+2020-10-20 16:34:55.3242|INFO|ServiceTickets_Classes.EnhancementsFile|Enhancements in File: 0
+2020-10-20 16:34:55.3390|INFO|ServiceTickets_Classes.TasksFile|Tasks in File: 0
+2020-10-20 16:40:49.7488|INFO|ServiceTickets_Classes.Program|User choice: ""
+2020-10-20 16:40:49.7488|INFO|ServiceTickets_Classes.Program|Program ended
+2020-10-20 16:41:04.2412|INFO|ServiceTickets_Classes.Program|Program started
+2020-10-20 16:41:09.6265|INFO|ServiceTickets_Classes.Program|User choice: "4"
+2020-10-20 16:41:09.6826|ERROR|ServiceTickets_Classes.TicketFile|Index was outside the bounds of the array.
+2020-10-20 16:41:09.7425|INFO|ServiceTickets_Classes.EnhancementsFile|Enhancements in File: 0
+2020-10-20 16:41:09.7515|INFO|ServiceTickets_Classes.TasksFile|Tasks in File: 0
+2020-10-20 16:44:58.8185|INFO|ServiceTickets_Classes.Program|User choice: ""
+2020-10-20 16:44:58.8185|INFO|ServiceTickets_Classes.Program|Program ended
+2020-10-20 16:45:19.7373|INFO|ServiceTickets_Classes.Program|Program started
+2020-10-20 16:45:25.3747|INFO|ServiceTickets_Classes.Program|User choice: "4"
+2020-10-20 16:45:25.4403|ERROR|ServiceTickets_Classes.TicketFile|Input string was not in a correct format.
+2020-10-20 16:45:25.4890|INFO|ServiceTickets_Classes.EnhancementsFile|Enhancements in File: 0
+2020-10-20 16:45:25.4890|INFO|ServiceTickets_Classes.TasksFile|Tasks in File: 0
+2020-10-20 16:46:41.9019|INFO|ServiceTickets_Classes.Program|User choice: "1"
+2020-10-20 16:46:41.9604|ERROR|ServiceTickets_Classes.TicketFile|Input string was not in a correct format.
+2020-10-20 16:50:47.8527|INFO|ServiceTickets_Classes.Program|Program started
+2020-10-20 16:50:52.4168|INFO|ServiceTickets_Classes.Program|User choice: "1"
+2020-10-20 16:50:52.5103|INFO|ServiceTickets_Classes.TicketFile|System.Collections.Generic.List`1[ServiceTickets_Classes.Bug]
+2020-10-20 16:50:52.5143|INFO|ServiceTickets_Classes.TicketFile|Bugs in File 4
+2020-10-20 16:52:33.8383|INFO|ServiceTickets_Classes.Program|User choice: "4"
+2020-10-20 16:52:33.8679|INFO|ServiceTickets_Classes.TicketFile|System.Collections.Generic.List`1[ServiceTickets_Classes.Bug]
+2020-10-20 16:52:33.8679|INFO|ServiceTickets_Classes.TicketFile|Bugs in File 4
+2020-10-20 16:52:33.9489|INFO|ServiceTickets_Classes.EnhancementsFile|Enhancements in File: 0
+2020-10-20 16:52:33.9603|INFO|ServiceTickets_Classes.TasksFile|Tasks in File: 0
+2020-10-20 16:53:03.5220|INFO|ServiceTickets_Classes.Program|User choice: ""
+2020-10-20 16:53:03.5220|INFO|ServiceTickets_Classes.Program|Program ended
+2020-10-20 16:53:20.6245|INFO|ServiceTickets_Classes.Program|Program started
+2020-10-20 16:53:25.6695|INFO|ServiceTickets_Classes.Program|User choice: "5"
+2020-10-20 16:53:25.6887|INFO|ServiceTickets_Classes.Program|Program ended
+2020-10-20 16:53:36.9753|INFO|ServiceTickets_Classes.Program|Program started
+2020-10-20 16:53:37.6594|INFO|ServiceTickets_Classes.Program|User choice: "4"
+2020-10-20 16:53:37.7168|ERROR|ServiceTickets_Classes.TicketFile|Index was outside the bounds of the array.
+2020-10-20 16:53:37.7714|INFO|ServiceTickets_Classes.EnhancementsFile|Enhancements in File: 0
+2020-10-20 16:53:37.7840|INFO|ServiceTickets_Classes.TasksFile|Tasks in File: 0
+2020-10-20 17:00:33.7766|INFO|ServiceTickets_Classes.Program|User choice: "1"
+2020-10-20 17:00:33.8019|ERROR|ServiceTickets_Classes.TicketFile|Index was outside the bounds of the array.
+2020-10-20 17:05:37.3829|INFO|ServiceTickets_Classes.Program|Program started
+2020-10-20 17:05:41.4107|INFO|ServiceTickets_Classes.Program|User choice: "4"
+2020-10-20 17:05:41.4634|ERROR|ServiceTickets_Classes.TicketFile|Index was outside the bounds of the array.
+2020-10-20 17:05:41.5278|INFO|ServiceTickets_Classes.EnhancementsFile|Enhancements in File: 0
+2020-10-20 17:05:41.5450|INFO|ServiceTickets_Classes.TasksFile|Tasks in File: 0
+2020-10-20 17:06:30.5212|INFO|ServiceTickets_Classes.Program|User choice: ""
+2020-10-20 17:06:30.5212|INFO|ServiceTickets_Classes.Program|Program ended
+2020-10-20 17:08:57.4397|INFO|ServiceTickets_Classes.Program|Program started
+2020-10-20 17:08:58.9221|INFO|ServiceTickets_Classes.Program|User choice: "4"
+2020-10-20 17:08:58.9758|ERROR|ServiceTickets_Classes.TicketFile|Input string was not in a correct format.
+2020-10-20 17:08:59.0509|INFO|ServiceTickets_Classes.EnhancementsFile|Enhancements in File: 0
+2020-10-20 17:08:59.0674|INFO|ServiceTickets_Classes.TasksFile|Tasks in File: 0

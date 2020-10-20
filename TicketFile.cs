@@ -24,15 +24,12 @@ namespace ServiceTickets_Classes
                 while (!sr.EndOfStream)
                 {
 
-
-                    
-
                     string line = sr.ReadLine();
                     int idx = line.IndexOf('"');
                     if (idx == -1)
                     {
                         string[] ticketDetails = line.Split(",");
-
+                         
                         serviceTicket.ticketId = UInt64.Parse(ticketDetails[0]);
                         serviceTicket.summary = ticketDetails[1];
                         serviceTicket.status = ticketDetails[2];
@@ -41,6 +38,7 @@ namespace ServiceTickets_Classes
                         serviceTicket.assigned = ticketDetails[5];
                         serviceTicket.employeeWatching = ticketDetails[6].Split('|').ToList();
                         serviceTicket.severity = ticketDetails[7];
+                      
                     }
                     else
                     {
@@ -68,20 +66,22 @@ namespace ServiceTickets_Classes
                         line = line.Substring(idx + 1);
                         idx = line.IndexOf(',');
                         serviceTicket.assigned = line.Substring(0, idx);
-
+                       
                         line = line.Substring(idx + 1);
                         idx = line.IndexOf(',');
                         String employeesWatching = line.Substring(0, idx);
                         serviceTicket.employeeWatching = employeesWatching.Split('|').ToList();
-
+                        
                         line = line.Substring(idx + 1);
+                       
                         serviceTicket.severity = line;
                     }
                     Tickets.Add(serviceTicket);
+                   
                 }
-
-                sr.Close();
+                logger.Info(Tickets);
                 logger.Info("Bugs in File {Count}", Tickets.Count);
+                 sr.Close();
             }
             catch (Exception ex)
             {
@@ -95,7 +95,7 @@ namespace ServiceTickets_Classes
             serviceTicket.ticketId = Tickets.Max(s => s.ticketId) + 1;
 
             StreamWriter sw = new StreamWriter(filePath, true);
-            sw.WriteLine($"{serviceTicket.ticketId},{serviceTicket.summary},{serviceTicket.status},{serviceTicket.assigned},{string.Join('|', serviceTicket.employeeWatching)},{serviceTicket.severity}");
+            sw.WriteLine($"{serviceTicket.ticketId},{serviceTicket.summary},{serviceTicket.status},{serviceTicket.priority},{serviceTicket.yourName},{serviceTicket.assigned},{string.Join('|', serviceTicket.employeeWatching)},{serviceTicket.severity}");
             sw.Close();
             Tickets.Add(serviceTicket);
         }

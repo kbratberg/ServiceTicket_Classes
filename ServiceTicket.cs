@@ -7,12 +7,7 @@ namespace ServiceTickets_Classes
     public abstract class ServiceTicket
     {
         public UInt64 ticketId { get; set; }
-
-        string _summary;
-        string _status;
-        string _priority;
-        string _yourName;
-        string _assigned;
+        public string _summary;
 
 
         public string summary
@@ -27,11 +22,7 @@ namespace ServiceTickets_Classes
             }
         }
 
-        public string yourName
-        {
-            get;
-            set;
-        }
+        
 
         public string priority
         {
@@ -39,6 +30,12 @@ namespace ServiceTickets_Classes
             set;
         }
         public string status
+        {
+            get;
+            set;
+        }
+
+        public string yourName
         {
             get;
             set;
