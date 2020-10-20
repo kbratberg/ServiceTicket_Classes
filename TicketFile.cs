@@ -8,38 +8,43 @@ namespace ServiceTickets_Classes
 {
     public class TicketFile
     {
-          public string filePath { get; set; }
+        public string filePath { get; set; }
 
-          public List<ServiceTicket> Tickets {get; set;}
+        public List<Bug> Tickets { get; set; }
         private static NLog.Logger logger = NLogBuilder.ConfigureNLog(Directory.GetCurrentDirectory() + "\\nlog.config").GetCurrentClassLogger();
-    
-        public TicketFile(string ticketFilePath){
-            Tickets = new List<ServiceTicket>();
+
+        public TicketFile(string ticketFilePath)
+        {
+            Tickets = new List<Bug>();
             filePath = ticketFilePath;
-            
-            try{
+            Bug serviceTicket = new Bug();
+            try
+            {
                 StreamReader sr = new StreamReader(filePath);
-                while(!sr.EndOfStream){
+                while (!sr.EndOfStream)
+                {
+
+
                     
-                    if (filePath == (Directory.GetCurrentDirectory() + "\\ServiceTickets.csv")){
-                    Bug serviceTicket = new Bug();
-                    
+
                     string line = sr.ReadLine();
-                int idx = line.IndexOf('"');
-                if(idx == -1){
-                    string[] ticketDetails = line.Split(",");
-                    
-                    serviceTicket.ticketId = UInt64.Parse(ticketDetails[0]);
-                    serviceTicket.summary = ticketDetails[1];
-                    serviceTicket.status = ticketDetails[2];
-                    serviceTicket.priority = ticketDetails[3];
-                    serviceTicket.yourName = ticketDetails[4];
-                    serviceTicket.assigned = ticketDetails[5];
-                    serviceTicket.employeeWatching = ticketDetails[6].Split('|').ToList();
-                    serviceTicket.severity = ticketDetails[7];
-                }
-                else{
-                    serviceTicket.ticketId = UInt64.Parse(line.Substring(0, idx - 1));
+                    int idx = line.IndexOf('"');
+                    if (idx == -1)
+                    {
+                        string[] ticketDetails = line.Split(",");
+
+                        serviceTicket.ticketId = UInt64.Parse(ticketDetails[0]);
+                        serviceTicket.summary = ticketDetails[1];
+                        serviceTicket.status = ticketDetails[2];
+                        serviceTicket.priority = ticketDetails[3];
+                        serviceTicket.yourName = ticketDetails[4];
+                        serviceTicket.assigned = ticketDetails[5];
+                        serviceTicket.employeeWatching = ticketDetails[6].Split('|').ToList();
+                        serviceTicket.severity = ticketDetails[7];
+                    }
+                    else
+                    {
+                        serviceTicket.ticketId = UInt64.Parse(line.Substring(0, idx - 1));
                         // remove movieId and first quote from string
                         line = line.Substring(idx + 1);
                         // find the next quote
@@ -69,45 +74,32 @@ namespace ServiceTickets_Classes
                         String employeesWatching = line.Substring(0, idx);
                         serviceTicket.employeeWatching = employeesWatching.Split('|').ToList();
 
-                        line =line.Substring(idx + 1);
-                        serviceTicket.severity = line.Substring(0);
+                        line = line.Substring(idx + 1);
+                        serviceTicket.severity = line;
+                    }
+                    Tickets.Add(serviceTicket);
                 }
-                Tickets.Add(serviceTicket);
-                }
-                }
+
                 sr.Close();
-                logger.Info("Tickets in File: {Count}", Tickets.Count);
-            } catch(Exception ex)
+                logger.Info("Bugs in File {Count}", Tickets.Count);
+            }
+            catch (Exception ex)
             {
                 logger.Error(ex.Message);
             }
 
         }
-        
-        public void AddBugTicket(Bug serviceTicket){
-                serviceTicket.ticketId = Tickets.Max(s => s.ticketId) + 1;
 
-                StreamWriter sw = new StreamWriter(filePath, true);
-                sw.WriteLine($"{serviceTicket.ticketId},{serviceTicket.summary},{serviceTicket.status},{serviceTicket.assigned},{string.Join('|', serviceTicket.employeeWatching)},{serviceTicket.severity}");
-                sw.Close();
-                Tickets.Add(serviceTicket);
-            }
-            public void AddEnhancementTicket(Enhancements serviceTicket){
-                serviceTicket.ticketId = Tickets.Max(s => s.ticketId) + 1;
+        public void AddBugTicket(Bug serviceTicket)
+        {
+            serviceTicket.ticketId = Tickets.Max(s => s.ticketId) + 1;
 
-                StreamWriter sw = new StreamWriter(filePath, true);
-                sw.WriteLine($"{serviceTicket.ticketId},{serviceTicket.summary},{serviceTicket.status},{serviceTicket.assigned},{string.Join('|', serviceTicket.employeeWatching)},{serviceTicket.software},{serviceTicket.cost},{serviceTicket.reason},{serviceTicket.estimate}");
-                sw.Close();
-                Tickets.Add(serviceTicket);
-            }
-            public void AddTaskTicket(Tasks serviceTicket){
-                serviceTicket.ticketId = Tickets.Max(s => s.ticketId) + 1;
+            StreamWriter sw = new StreamWriter(filePath, true);
+            sw.WriteLine($"{serviceTicket.ticketId},{serviceTicket.summary},{serviceTicket.status},{serviceTicket.assigned},{string.Join('|', serviceTicket.employeeWatching)},{serviceTicket.severity}");
+            sw.Close();
+            Tickets.Add(serviceTicket);
+        }
 
-                StreamWriter sw = new StreamWriter(filePath, true);
-                sw.WriteLine($"{serviceTicket.ticketId},{serviceTicket.summary},{serviceTicket.status},{serviceTicket.assigned},{string.Join('|', serviceTicket.employeeWatching)},{serviceTicket.projectName},{serviceTicket.dueDate}");
-                sw.Close();
-                Tickets.Add(serviceTicket);
-            }
-    
+
     }
 }

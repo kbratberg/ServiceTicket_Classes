@@ -16,13 +16,13 @@ namespace ServiceTickets_Classes
         public EnhancementsFile(string ticketFilePath){
             Tickets = new List<Enhancements>();
             filePath = ticketFilePath;
-            
+            Enhancements serviceTicket = new Enhancements();
             try{
                 StreamReader sr = new StreamReader(filePath);
                 while(!sr.EndOfStream){
                     
-                    if (filePath == (Directory.GetCurrentDirectory() + "\\ServiceTickets.csv")){
-                    Enhancements serviceTicket = new Enhancements();
+                   
+                    
                     
                     string line = sr.ReadLine();
                 int idx = line.IndexOf('"');
@@ -92,9 +92,9 @@ namespace ServiceTickets_Classes
                 }
                 Tickets.Add(serviceTicket);
                 }
-                }
+                
                 sr.Close();
-                logger.Info("Tickets in File: {Count}", Tickets.Count);
+                logger.Info("Enhancements in File: {Count}", Tickets.Count);
             } catch(Exception ex)
             {
                 logger.Error(ex.Message);

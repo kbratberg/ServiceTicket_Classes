@@ -16,13 +16,13 @@ namespace ServiceTickets_Classes
         public TasksFile(string ticketFilePath){
             Tickets = new List<Tasks>();
             filePath = ticketFilePath;
-            
+            Tasks serviceTicket = new Tasks();
             try{
                 StreamReader sr = new StreamReader(filePath);
                 while(!sr.EndOfStream){
                     
                     
-                    Tasks serviceTicket = new Tasks();
+                    
                     
                     string line = sr.ReadLine();
                 int idx = line.IndexOf('"');
@@ -81,7 +81,7 @@ namespace ServiceTickets_Classes
                 }
                 
                 sr.Close();
-                logger.Info("Tickets in File: {Count}", Tickets.Count);
+                logger.Info("Tasks in File: {Count}", Tickets.Count);
             } catch(Exception ex)
             {
                 logger.Error(ex.Message);
