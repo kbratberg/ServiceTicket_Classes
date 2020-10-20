@@ -13,14 +13,17 @@ namespace ServiceTickets_Classes
           public List<ServiceTicket> Tickets {get; set;}
         private static NLog.Logger logger = NLogBuilder.ConfigureNLog(Directory.GetCurrentDirectory() + "\\nlog.config").GetCurrentClassLogger();
     
-        public TicketFile(string movieFilePath){
-
-            filePath = movieFilePath;
+        public TicketFile(string ticketFilePath){
             Tickets = new List<ServiceTicket>();
+            filePath = ticketFilePath;
+            
             try{
                 StreamReader sr = new StreamReader(filePath);
                 while(!sr.EndOfStream){
-                    ServiceTicket serviceTicket = new ServiceTicket();
+                    
+                    if (filePath == (Directory.GetCurrentDirectory() + "\\ServiceTickets.csv")){
+                    Bug serviceTicket = new Bug();
+                    
                     string line = sr.ReadLine();
                 int idx = line.IndexOf('"');
                 if(idx == -1){
@@ -33,6 +36,7 @@ namespace ServiceTickets_Classes
                     serviceTicket.yourName = ticketDetails[4];
                     serviceTicket.assigned = ticketDetails[5];
                     serviceTicket.employeeWatching = ticketDetails[6].Split('|').ToList();
+                    serviceTicket.severity = ticketDetails[7];
                 }
                 else{
                     serviceTicket.ticketId = UInt64.Parse(line.Substring(0, idx - 1));
@@ -62,11 +66,15 @@ namespace ServiceTickets_Classes
 
                         line = line.Substring(idx + 1);
                         idx = line.IndexOf(',');
-                        serviceTicket.employeeWatching = line.Split('|').ToList();
+                        String employeesWatching = line.Substring(0, idx);
+                        serviceTicket.employeeWatching = employeesWatching.Split('|').ToList();
+
+                        line =line.Substring(idx + 1);
+                        serviceTicket.severity = line.Substring(0);
                 }
                 Tickets.Add(serviceTicket);
                 }
-
+                }
                 sr.Close();
                 logger.Info("Tickets in File: {Count}", Tickets.Count);
             } catch(Exception ex)
@@ -75,6 +83,7 @@ namespace ServiceTickets_Classes
             }
 
         }
+        
         public void AddTicket(ServiceTicket serviceTicket){
                 serviceTicket.ticketId = Tickets.Max(s => s.ticketId) + 1;
 
