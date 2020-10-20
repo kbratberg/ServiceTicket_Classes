@@ -84,11 +84,27 @@ namespace ServiceTickets_Classes
 
         }
         
-        public void AddTicket(ServiceTicket serviceTicket){
+        public void AddBugTicket(Bug serviceTicket){
                 serviceTicket.ticketId = Tickets.Max(s => s.ticketId) + 1;
 
                 StreamWriter sw = new StreamWriter(filePath, true);
-                sw.WriteLine($"{serviceTicket.ticketId},{serviceTicket.summary},{serviceTicket.status},{serviceTicket.assigned},{string.Join('|', serviceTicket.employeeWatching)}");
+                sw.WriteLine($"{serviceTicket.ticketId},{serviceTicket.summary},{serviceTicket.status},{serviceTicket.assigned},{string.Join('|', serviceTicket.employeeWatching)},{serviceTicket.severity}");
+                sw.Close();
+                Tickets.Add(serviceTicket);
+            }
+            public void AddEnhancementTicket(Enhancements serviceTicket){
+                serviceTicket.ticketId = Tickets.Max(s => s.ticketId) + 1;
+
+                StreamWriter sw = new StreamWriter(filePath, true);
+                sw.WriteLine($"{serviceTicket.ticketId},{serviceTicket.summary},{serviceTicket.status},{serviceTicket.assigned},{string.Join('|', serviceTicket.employeeWatching)},{serviceTicket.software},{serviceTicket.cost},{serviceTicket.reason},{serviceTicket.estimate}");
+                sw.Close();
+                Tickets.Add(serviceTicket);
+            }
+            public void AddTaskTicket(Tasks serviceTicket){
+                serviceTicket.ticketId = Tickets.Max(s => s.ticketId) + 1;
+
+                StreamWriter sw = new StreamWriter(filePath, true);
+                sw.WriteLine($"{serviceTicket.ticketId},{serviceTicket.summary},{serviceTicket.status},{serviceTicket.assigned},{string.Join('|', serviceTicket.employeeWatching)},{serviceTicket.projectName},{serviceTicket.dueDate}");
                 sw.Close();
                 Tickets.Add(serviceTicket);
             }
