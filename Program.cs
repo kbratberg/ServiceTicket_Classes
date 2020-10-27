@@ -233,7 +233,7 @@ namespace ServiceTickets_Classes
                             Console.WriteLine(b.Display());
                         }
 
-                        var Tasks = bugFile.Tickets.Where(b => b.priority.Contains(searchCriteria));
+                        var Tasks = taskFile.Tickets.Where(t => t.priority.Contains(searchCriteria));
                         foreach(Tasks t in taskFile.Tickets)
                         {
                             Console.WriteLine(t.Display());
@@ -254,7 +254,7 @@ namespace ServiceTickets_Classes
                             Console.WriteLine(b.Display());
                         }
 
-                        var Tasks = bugFile.Tickets.Where(b => b.status.Contains(searchCriteria));
+                        var Tasks = taskFile.Tickets.Where(t => t.status.Contains(searchCriteria));
                         foreach(Tasks t in taskFile.Tickets)
                         {
                             Console.WriteLine(t.Display());
@@ -275,13 +275,14 @@ namespace ServiceTickets_Classes
                             Console.WriteLine(b.Display());
                         }
 
-                        var Tasks = bugFile.Tickets.Where(b => b.yourName.Contains(searchCriteria));
+                        var Tasks = taskFile.Tickets.Where(t => t.yourName.Contains(searchCriteria));
                         foreach(Tasks t in taskFile.Tickets)
                         {
                             Console.WriteLine(t.Display());
                         }
                         Console.WriteLine($"There are {Enhancements.Count() + Bugs.Count() + Tasks.Count()} service tickets found");
                     }
+                    
                     }while (searchChoice == "1" || searchChoice == "2" || searchChoice == "3"); 
                     
                 }
