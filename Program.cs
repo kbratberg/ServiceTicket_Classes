@@ -2,6 +2,7 @@
 using NLog.Web;
 using System.IO;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ServiceTickets_Classes
 {
@@ -24,6 +25,7 @@ namespace ServiceTickets_Classes
                 Console.WriteLine("2) Add Enhancement service ticket");
                 Console.WriteLine("3) Add Task service ticket");
                 Console.WriteLine("4) Display All Service Tickets");
+                Console.WriteLine("5) Search for a ticket");
                 Console.WriteLine("Enter to quit");
                 // input selection
                 choice = Console.ReadLine();
@@ -201,8 +203,89 @@ namespace ServiceTickets_Classes
                         Console.WriteLine(t.Display());
                     }
 
+                }else if(choice == "5"){
+                    ticketFilePath = Directory.GetCurrentDirectory() + "\\ServiceTickets.csv";
+                    TicketFile bugFile = new TicketFile(ticketFilePath);
+                   
+                    ticketFilePath = Directory.GetCurrentDirectory() + "\\Tasks.csv";
+                    TasksFile taskFile= new TasksFile(ticketFilePath);
+                    
+                    
+                    ticketFilePath = Directory.GetCurrentDirectory() + "\\Enhancements.csv";
+                    EnhancementsFile enhancementFile= new EnhancementsFile(ticketFilePath);
+
+                    // ask what to search
+                    Console.WriteLine("What would you like to search\n1)Priority\n2)Status\n3)Submitter");
+                    String searchChoice = Console.ReadLine();
+                    do{
+                    if(searchChoice == "1"){
+                        Console.WriteLine("Enter Priority value");
+                        String searchCriteria = Console.ReadLine();
+                        var Enhancements = enhancementFile.Tickets.Where(e => e.priority.Contains(searchCriteria));
+                        foreach(Enhancements e in enhancementFile.Tickets)
+                        {
+                            Console.WriteLine(e.Display());
+                        }
+
+                        var Bugs = bugFile.Tickets.Where(b => b.priority.Contains(searchCriteria));
+                        foreach(Bug b in bugFile.Tickets)
+                        {
+                            Console.WriteLine(b.Display());
+                        }
+
+                        var Tasks = bugFile.Tickets.Where(b => b.priority.Contains(searchCriteria));
+                        foreach(Tasks t in taskFile.Tickets)
+                        {
+                            Console.WriteLine(t.Display());
+                        }
+                        Console.WriteLine($"There are {Enhancements.Count() + Bugs.Count() + Tasks.Count()} service tickets found");
+                    }else if(searchChoice == "2"){
+                        Console.WriteLine("Enter Status value");
+                        String searchCriteria = Console.ReadLine();
+                        var Enhancements = enhancementFile.Tickets.Where(e => e.status.Contains(searchCriteria));
+                        foreach(Enhancements e in enhancementFile.Tickets)
+                        {
+                            Console.WriteLine(e.Display());
+                        }
+
+                        var Bugs = bugFile.Tickets.Where(b => b.status.Contains(searchCriteria));
+                        foreach(Bug b in bugFile.Tickets)
+                        {
+                            Console.WriteLine(b.Display());
+                        }
+
+                        var Tasks = bugFile.Tickets.Where(b => b.status.Contains(searchCriteria));
+                        foreach(Tasks t in taskFile.Tickets)
+                        {
+                            Console.WriteLine(t.Display());
+                        }
+                        Console.WriteLine($"There are {Enhancements.Count() + Bugs.Count() + Tasks.Count()} service tickets found");
+                    }else if(searchChoice == "3"){
+                        Console.WriteLine("Enter Submitter to search");
+                        String searchCriteria = Console.ReadLine();
+                        var Enhancements = enhancementFile.Tickets.Where(e => e.yourName.Contains(searchCriteria));
+                        foreach(Enhancements e in enhancementFile.Tickets)
+                        {
+                            Console.WriteLine(e.Display());
+                        }
+
+                        var Bugs = bugFile.Tickets.Where(b => b.yourName.Contains(searchCriteria));
+                        foreach(Bug b in bugFile.Tickets)
+                        {
+                            Console.WriteLine(b.Display());
+                        }
+
+                        var Tasks = bugFile.Tickets.Where(b => b.yourName.Contains(searchCriteria));
+                        foreach(Tasks t in taskFile.Tickets)
+                        {
+                            Console.WriteLine(t.Display());
+                        }
+                        Console.WriteLine($"There are {Enhancements.Count() + Bugs.Count() + Tasks.Count()} service tickets found");
+                    }
+                    }while (searchChoice == "1" || searchChoice == "2" || searchChoice == "3"); 
+                    
                 }
-            } while (choice == "1" || choice == "2" || choice =="3" || choice =="4");
+            } while (choice == "1" || choice == "2" || choice =="3" || choice =="4" || choice == "5");
 
             logger.Info("Program ended");
         }
