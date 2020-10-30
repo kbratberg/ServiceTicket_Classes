@@ -87,7 +87,7 @@ namespace ServiceTickets_Classes
         }
         
             public void AddTaskTicket(Tasks serviceTicket){
-                serviceTicket.ticketId = Tickets.Max(s => s.ticketId) + 1;
+                serviceTicket.ticketId = Tickets.Max(t => t.ticketId) + 1;
 
                 StreamWriter sw = new StreamWriter(filePath, true);
                 sw.WriteLine($"{serviceTicket.ticketId},{serviceTicket.summary},{serviceTicket.status},{serviceTicket.priority},{serviceTicket.yourName},{serviceTicket.assigned},{string.Join('|', serviceTicket.employeeWatching)},{serviceTicket.projectName},{serviceTicket.dueDate}");

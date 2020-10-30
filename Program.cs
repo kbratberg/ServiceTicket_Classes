@@ -126,8 +126,6 @@ namespace ServiceTickets_Classes
                         serviceTicket.estimate = Console.ReadLine();
 
 
-
-                         
                         ticketFile.AddEnhancementTicket(serviceTicket);
                         
                     }else if (choice == "3"){

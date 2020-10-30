@@ -21,9 +21,6 @@ namespace ServiceTickets_Classes
                 StreamReader sr = new StreamReader(filePath);
                 while(!sr.EndOfStream){
                     
-                   
-                    
-                    
                     string line = sr.ReadLine();
                 int idx = line.IndexOf('"');
                 if(idx == -1){

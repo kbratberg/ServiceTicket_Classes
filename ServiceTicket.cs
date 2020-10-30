@@ -6,7 +6,7 @@ namespace ServiceTickets_Classes
 {
     public abstract class ServiceTicket
     {
-        public UInt64 ticketId { get; set; }
+        
         public string _summary;
 
 
@@ -55,13 +55,13 @@ namespace ServiceTickets_Classes
 
         public virtual string Display()
         {
-            return $"Ticket Id: {ticketId}\nSummary: {summary}\nStatus: {status}\nPriority Level: {priority}\nYour Name: {yourName}\nAssigned Employee {assigned}\nEmployees Watching {string.Join(", ", employeeWatching)} ";
+            return $"Summary: {summary}\nStatus: {status}\nPriority Level: {priority}\nYour Name: {yourName}\nAssigned Employee {assigned}\nEmployees Watching {string.Join(", ", employeeWatching)} ";
         }
 
     }
 
     public class Bug : ServiceTicket {
-
+        public UInt64 ticketId { get; set; }
         public string severity {get; set;}
 
         public override string Display()
@@ -71,6 +71,7 @@ namespace ServiceTickets_Classes
     }
 
     public class Enhancements : ServiceTicket{
+        public UInt64 ticketId { get; set; }
         public string software {get; set;}
         public string cost {get; set;}
         public string reason {get; set;}
@@ -83,6 +84,7 @@ namespace ServiceTickets_Classes
     }
 
     public class Tasks : ServiceTicket{
+        public UInt64 ticketId { get; set; }
         public string projectName {get; set;}
         public string dueDate {get; set;}
         
