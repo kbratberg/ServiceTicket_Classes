@@ -163,3 +163,26 @@
 2020-10-30 10:45:18.6851|INFO|ServiceTickets_Classes.TasksFile|Tasks in File: 2
 2020-10-30 10:46:46.7283|INFO|ServiceTickets_Classes.Program|User choice: "2"
 2020-10-30 10:46:46.7347|ERROR|ServiceTickets_Classes.EnhancementsFile|Index was outside the bounds of the array.
+2020-10-30 10:52:45.2651|INFO|ServiceTickets_Classes.Program|Program started
+2020-10-30 10:52:49.1057|INFO|ServiceTickets_Classes.Program|User choice: "2"
+2020-10-30 10:52:49.1544|ERROR|ServiceTickets_Classes.EnhancementsFile|Index was outside the bounds of the array.
+2020-10-30 10:53:26.6649|INFO|ServiceTickets_Classes.Program|Program started
+2020-10-30 10:53:29.8922|INFO|ServiceTickets_Classes.Program|User choice: "2"
+2020-10-30 10:53:29.9411|ERROR|ServiceTickets_Classes.EnhancementsFile|Index was outside the bounds of the array.
+2020-10-30 10:54:16.0343|INFO|ServiceTickets_Classes.Program|Program started
+2020-10-30 10:54:22.6030|INFO|ServiceTickets_Classes.Program|User choice: "2"
+2020-10-30 10:54:22.6401|ERROR|ServiceTickets_Classes.EnhancementsFile|Index was outside the bounds of the array.
+2020-10-30 10:55:15.5565|INFO|ServiceTickets_Classes.Program|Program started
+2020-10-30 10:55:17.5601|INFO|ServiceTickets_Classes.Program|User choice: "2"
+2020-10-30 10:55:17.5913|ERROR|ServiceTickets_Classes.EnhancementsFile|Index was outside the bounds of the array.
+2020-10-30 10:56:01.6318|INFO|ServiceTickets_Classes.Program|Program started
+2020-10-30 10:56:02.8745|INFO|ServiceTickets_Classes.Program|User choice: "2"
+2020-10-30 10:56:02.9099|ERROR|ServiceTickets_Classes.EnhancementsFile|Index was outside the bounds of the array.
+2020-10-30 11:03:30.2835|INFO|ServiceTickets_Classes.Program|Program started
+2020-10-30 11:03:31.8702|INFO|ServiceTickets_Classes.Program|User choice: "2"
+2020-10-30 11:03:31.9198|ERROR|ServiceTickets_Classes.EnhancementsFile|Input string was not in a correct format.
+2020-10-30 11:07:51.0298|INFO|ServiceTickets_Classes.Program|Program started
+2020-10-30 11:07:52.7805|INFO|ServiceTickets_Classes.Program|User choice: "2"
+2020-10-30 11:07:52.8382|ERROR|ServiceTickets_Classes.EnhancementsFile|Input string was not in a correct format.
+2020-10-30 11:14:29.6810|INFO|ServiceTickets_Classes.Program|User choice: ""
+2020-10-30 11:14:29.6810|INFO|ServiceTickets_Classes.Program|Program ended
